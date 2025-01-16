@@ -1,149 +1,77 @@
 <template>
   <div class="help-wrapper">
-    <!-- <backNav /> -->
-    <div class="search-wrapper">
-      <input
-        class="search"
-        v-model="searchQuery"
-        @input="changeList"
-        :placeholder="placeholderText"
-        type="text"
-      />
-      <img src="../../public/search.png" width="20px" height="20px" alt="" />
+    <div class="top-content">
+      <div>加微信：2024年6月17日，距今{{ a }}天</div>
+      <div>初见面：2024年6月30日，距今{{ b }}天</div>
+      <div>在一起：2024年8月10日，距今{{ c }}天</div>
     </div>
-    <div class="item-wrap" v-for="item in helpList" @click="toNext(item.url)">
+
+    <!-- <div class="item-wrap" v-for="item in helpList" @click="toNext(item.url)">
       <div class="left">{{ item.name }}</div>
       <div class="right"></div>
-    </div>
+    </div> -->
   </div>
 </template>
 
 <script setup lang="ts">
 import { useRouter } from 'vue-router'
-import {  ref } from 'vue'
-import { useI18n } from 'vue-i18n';
-const { t } = useI18n();
+import { ref } from 'vue'
+import  dayjs from 'dayjs'
 // 设置语言
 
 const router = useRouter()
-let searchQuery = ref('')
+// ref(0)
+
+ 
+// 创建一个Day.js对象
+let a = dayjs('2024-06-17').diff(dayjs(), 'day');
+let b = dayjs('2024-06-30').diff(dayjs(), 'day');
+let c = dayjs('2024-08-10').diff(dayjs(), 'day');
 
 const originList = [
   {
-    name: t('设备通话/音乐播放音质不好'),
+    name: '设备通话/音乐播放音质不好',
     url: '/call'
   },
-  // {
-  //   name: t('如何设置单位'),
-  //   url: '/setUnit'
-  // },
   {
-    name: t('设备无法绑定'),
-    url: '/unBind'
+    name: '如何设置单位',
+    url: '/setUnit'
   },
-  {
-    name: t('蓝牙连接经常断开'),
-    url: '/btDisconnect'
-  },
-  {
-    name: t('蓝牙同步数据时间长或不成功'),
-    url: '/btSyncData'
-  },
-  {
-    name: t('睡眠数据无法同步或不准确'),
-    url: '/sleepData'
-  },
-  {
-    name: t('抬腕亮屏不灵敏'),
-    url: '/raiseWrist'
-  },
-  {
-    name: t('设备背面自动发绿光是为什么'),
-    url: '/giveoutLight'
-  },
-  {
-    name: t('设备如何充电'),
-    url: '/reCharge'
-  },
-  {
-    name: t('如何使用拍照功能'),
-    url: '/takePhoto'
-  },
-  {
-    name: t('佩戴设备手机蓝牙需要一直开启吗'),
-    url: '/btOpen'
-  },
-  {
-    name: t('哪些因素会影响心率测试结果'),
-    url: '/changeResult'
-  },
-  {
-    name: t('哪些因素会影响计步的准确性'),
-    url: '/stepCount'
-  },
-  {
-    name: t('为什么设备上天气数据不同步或不准确'),
-    url: '/weatherData'
-  },
-  {
-    name: t('使用来电提醒'),
-    url: '/callReminder'
-  },
-  {
-    name: t('使用信息提醒'),
-    url: '/mesReminder'
-  },
-  {
-    name: t('有效运动'),
-    url: '/effectMovement'
-  }
-  // {
-  //   name: t('APP版本更新'),
-  //   url: '/versionUpdate'
-  // }
+  
 ]
 const list = JSON.parse(JSON.stringify(originList))
 
 
 const helpList = ref(list)
-const placeholderText = ref(t('快速搜索问题关键字'))
 const toNext = (url: string) => {
   router.push({
     path: url
   })
 }
-const changeList = () => {
-  let newList = originList.filter(item => {
-    return item.name.toLowerCase().includes(searchQuery.value.toLowerCase())
-  })
-  helpList.value = newList
-}
 </script>
 
 <style lang="scss" scoped>
 .help-wrapper {
-  user-select: none;
-  padding: 30px 15px 0;
-  .search-wrapper {
-    padding: 0 17px;
-    height: 46px;
-    // box-sizing: border-box;
-    border-radius: 15px;
-    font-size: 0;
-    border: 3px solid #666666;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-bottom: 30px;
-    .search {
-      outline: none;
-      border: 0;
-      height: 38px;
-      width: 80%;
-      color: #999999;
-      font-size: 16px;
-    }
+  // user-select: none;
+  // padding: 30px 15px 0;
+  /* 设置背景图片，记得替换为你的图片路径 */
+  background-image: url('/public/b.png');
+  
+  /* 设置其他样式，比如背景大小覆盖等 */
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  
+  /* 其他样式，比如定义高度、宽度等 */
+  height: 100vh; /* 根据需要设置高度 */
+  width: 100%;
+  .top-content{
+    padding:20px 15px;
+    color:#ffffff;
+    
   }
+
+ 
   .item-wrap {
     width: 100%;
     height: 24px;

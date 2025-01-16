@@ -1,1 +1,0 @@
-import{d as o,u as n,c,b as t,t as s,e as a,o as i}from"./index-B6VOzESS.js";const r={class:"page-wrapper"},_={class:"title-text"},d={class:"title-content"},f=o({__name:"index",setup(p){const{t:e}=n();return(l,u)=>(i(),c("div",r,[t("div",_,s(a(e)("有效运动")),1),t("div",d,s(a(e)("在运动中，所有运动需要达到最低运动记录标准才会保存，否则不作保存处理。所有运动达到1分钟后保存数据并产生运动记录。")),1)]))}});export{f as default};

@@ -1,1 +1,0 @@
-import{d as o,u as n,c,b as t,t as s,e as a,o as i}from"./index-B6VOzESS.js";const r={class:"page-wrapper"},_={class:"title-text"},d={class:"title-content"},f=o({__name:"index",setup(p){const{t:e}=n();return(l,u)=>(i(),c("div",r,[t("div",_,s(a(e)("如何设置单位")),1),t("div",d,s(a(e)("打开“我的>单位设置”，在此设置你需要的单位。设置完成后，单位将会同步到设备")),1)]))}});export{f as default};

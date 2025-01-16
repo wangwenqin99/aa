@@ -1,1 +1,0 @@
-import{d as o,u as n,c,b as t,t as s,e as a,o as i}from"./index-B6VOzESS.js";const r={class:"page-wrapper"},_={class:"title-text"},d={class:"title-content"},f=o({__name:"index",setup(p){const{t:e}=n();return(l,u)=>(i(),c("div",r,[t("div",_,s(a(e)("设备背面自动发绿光是为什么")),1),t("div",d,s(a(e)("绿光是设备尝试进行心率监测，如您开启了日常心率监测，设备就会自动发光。我们的设备采用的是目前主流的光学心率监测，请放心使用。")),1)]))}});export{f as default};

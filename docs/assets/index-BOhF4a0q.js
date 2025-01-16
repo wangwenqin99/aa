@@ -1,1 +1,0 @@
-import{d as o,u as n,c,b as t,t as s,e as a,o as i}from"./index-B6VOzESS.js";const r={class:"page-wrapper"},_={class:"title-text"},d={class:"title-content"},f=o({__name:"index",setup(p){const{t:e}=n();return(l,u)=>(i(),c("div",r,[t("div",_,s(a(e)("APP版本更新")),1),t("div",d,s(a(e)("打开APP进入“我的>关于”页面，点击【版本更新】可跳转到更新页面。")),1)]))}});export{f as default};

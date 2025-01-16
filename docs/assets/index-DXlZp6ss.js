@@ -1,0 +1,1 @@
+import{_ as s,o as c,c as o,a as t,t as e}from"./index-fXHYq3Qs.js";const a={},n={class:"page-wrapper"},_=t("div",{class:"title-text"},e("设备通话/音乐播放音质不好"),-1),i=t("div",{class:"title-content"},e("如设备扬声器进水，可能会影响通话或音乐播放音质，需用力将水甩出后静置，一般4~5小时候设备恢复良好音质。"),-1),r=[_,i];function d(l,p){return c(),o("div",n,r)}const h=s(a,[["render",d]]);export{h as default};
