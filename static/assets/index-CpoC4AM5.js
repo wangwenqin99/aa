@@ -1,0 +1,1 @@
+import{d as o,u as n,c,b as t,t as s,e as a,o as i}from"./index-B6VOzESS.js";const r={class:"page-wrapper"},_={class:"title-text"},d={class:"title-content"},f=o({__name:"index",setup(p){const{t:e}=n();return(l,u)=>(i(),c("div",r,[t("div",_,s(a(e)("设备通话/音乐播放音质不好")),1),t("div",d,s(a(e)("如设备扬声器进水，可能会影响通话或音乐播放音质，需用力将水甩出后静置，一般4~5小时候设备恢复良好音质。")),1)]))}});export{f as default};
