@@ -1,1 +1,0 @@
-import{_ as s,o as c,c as o,a as t,t as e}from"./index-fXHYq3Qs.js";const a={},n={class:"page-wrapper"},_=t("div",{class:"title-text"},e("如何设置单位"),-1),i=t("div",{class:"title-content"},e("打开“我的>单位设置”，在此设置你需要的单位。设置完成后，单位将会同步到设备"),-1),r=[_,i];function d(l,p){return c(),o("div",n,r)}const h=s(a,[["render",d]]);export{h as default};
