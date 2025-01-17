@@ -1,16 +1,18 @@
 <template>
-  <div class="help-wrapper">
-    <div class="top-content">
-      <div>老王与狗子的纪念日</div>
-      <div>加微信：2024年6月17日，距今{{ a }}天</div>
-      <div>初见面：2024年6月30日，距今{{ b }}天</div>
-      <div>在一起：2024年8月10日，距今{{ c }}天</div>
-    </div>
+  <div class="wrapper">
+    <div class="wrap">
+      <div class="top-content">
+        <div class="content">老王与狗子的纪念日</div>
+        <div class="content">加微信：2024年6月17日，距今 <span class="color-green">{{ a }}</span> 天</div>
+        <div class="content">初见面：2024年6月30日，距今 <span class="color-green">{{ b }}</span> 天</div>
+        <div class="content">在一起：2024年8月10日，距今 <span class="color-green">{{ c }}</span> 天</div>
+      </div>
 
-    <!-- <div class="item-wrap" v-for="item in helpList" @click="toNext(item.url)">
-      <div class="left">{{ item.name }}</div>
-      <div class="right"></div>
-    </div> -->
+      <!-- <div class="item-wrap" v-for="item in helpList" @click="toNext(item.url)">
+        <div class="left">{{ item.name }}</div>
+        <div class="right"></div>
+      </div> -->
+    </div>
   </div>
 </template>
 
@@ -25,9 +27,9 @@ const router = useRouter()
 
  
 // 创建一个Day.js对象
-let a = dayjs('2024-06-17').diff(dayjs(), 'day');
-let b = dayjs('2024-06-30').diff(dayjs(), 'day');
-let c = dayjs('2024-08-10').diff(dayjs(), 'day');
+let a = dayjs().diff(dayjs('2024-06-17'), 'day');
+let b = dayjs().diff(dayjs('2024-06-30'), 'day');
+let c = dayjs().diff(dayjs('2024-08-10'), 'day');
 
 const originList = [
   {
@@ -52,9 +54,7 @@ const toNext = (url: string) => {
 </script>
 
 <style lang="scss" scoped>
-.help-wrapper {
-  // user-select: none;
-  // padding: 30px 15px 0;
+.wrapper {
   /* 设置背景图片，记得替换为你的图片路径 */
   background-image: url('/public/b.png');
   
@@ -62,37 +62,49 @@ const toNext = (url: string) => {
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
-  
   /* 其他样式，比如定义高度、宽度等 */
   height: 100vh; /* 根据需要设置高度 */
   width: 100%;
-  .top-content{
-    padding:20px 15px;
-    color:#ffffff;
-    
+  
+  .wrap{
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,.3);
+    .top-content{
+      padding:20px 15px;
+      color:#ffffff;
+      .content{
+        line-height: 50px;
+        .color-green{
+          color: greenyellow;
+        }
+      }
+      
+    }
+
+    .item-wrap {
+      width: 100%;
+      height: 24px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 42.5px;
+      .left {
+        font-size: 17px;
+        color: #000000;
+        width: 90%;
+      }
+      .right {
+        width: 9px;
+        height: 9px;
+        border-top: 2px solid #000000;
+        border-right: 2px solid #000000;
+        transform: rotate(45deg);
+        margin-right: 7px;
+      }
+    }
   }
 
  
-  .item-wrap {
-    width: 100%;
-    height: 24px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-bottom: 42.5px;
-    .left {
-      font-size: 17px;
-      color: #000000;
-      width: 90%;
-    }
-    .right {
-      width: 9px;
-      height: 9px;
-      border-top: 2px solid #000000;
-      border-right: 2px solid #000000;
-      transform: rotate(45deg);
-      margin-right: 7px;
-    }
-  }
 }
 </style>
