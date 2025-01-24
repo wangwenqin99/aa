@@ -1,6 +1,7 @@
 <template>
   <div class="wrapper">
-    <div class="wrap">
+    <div class="wrap2" ref="snowfallContainer" ></div>
+    <div class="wrap" >
       <div class="top-content">
         <div class="content">老王与狗子的纪念日</div>
         <div class="content">加微信：2024年6月17日，距今 <span class="color-green">{{ a }}</span> 天</div>
@@ -18,7 +19,7 @@
 
 <script setup lang="ts">
 import { useRouter } from 'vue-router'
-import { ref } from 'vue'
+import { onMounted, ref } from 'vue'
 import  dayjs from 'dayjs'
 // 设置语言
 
@@ -30,6 +31,37 @@ const router = useRouter()
 let a = dayjs().diff(dayjs('2024-06-17'), 'day');
 let b = dayjs().diff(dayjs('2024-06-30'), 'day');
 let c = dayjs().diff(dayjs('2024-08-10'), 'day');
+
+import JParticles from "jparticles";
+ 
+const snowfallContainer = ref(null);
+ 
+onMounted(() => {
+  // 文档 https://jparticles.js.org/#/examples/snow
+  if (snowfallContainer.value) {
+    new JParticles.Snow(snowfallContainer.value, {
+      // JParticles 的雪花配置项
+      num: 2, // 数量
+      color: "#FFF", // 颜色
+      maxR: 1, // 最小尺寸
+      minR: 5, // 最大尺寸
+      opacity:0.9,
+      maxSpeed: 0.15, // 雪花飘落最大运动速度
+      minSpeed: 0.02, // 雪花飘落最小运动速度
+      // duration:3000,
+      shape: [
+        'circle',
+        // 'triangle',
+        // 'star'
+        // 'https://img0.baidu.com/it/u=3485414744,2885040284&fm=253&fmt=auto&app=120&f=JPEG?w=800&h=1422',
+        // 'https://img0.baidu.com/it/u=3485414744,2885040284&fm=253&fmt=auto&app=120&f=JPEG?w=800&h=1422',
+        // require('../../public/xh1.png'),
+        // require('../../public/xh1.png'),
+
+      ],//雪花图片地址，我这个链接一天后失效，请换成自己的图片链接
+    });
+  }
+})
 
 const originList = [
   {
@@ -55,9 +87,9 @@ const toNext = (url: string) => {
 
 <style lang="scss" scoped>
 .wrapper {
+  position: relative;
   /* 设置背景图片，记得替换为你的图片路径 */
   background-image: url('/public/b.png');
-  
   /* 设置其他样式，比如背景大小覆盖等 */
   background-size: cover;
   background-repeat: no-repeat;
@@ -65,11 +97,23 @@ const toNext = (url: string) => {
   /* 其他样式，比如定义高度、宽度等 */
   height: 100vh; /* 根据需要设置高度 */
   width: 100%;
-  
-  .wrap{
+  .wrap2{
+    position: absolute;
+    left:0;
+    top: 0;
     width: 100%;
     height: 100%;
     background-color: rgba(0,0,0,.3);
+  }
+  
+  .wrap{
+    position: absolute;
+    left:0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 100;
+    
     .top-content{
       padding:20px 15px;
       color:#ffffff;

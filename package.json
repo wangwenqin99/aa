@@ -13,6 +13,7 @@
     "crypto-js": "^4.2.0",
     "dayjs": "^1.11.13",
     "element-plus": "^2.7.2",
+    "jparticles": "^3.5.0",
     "konva": "^9.3.6",
     "normalize.css": "^8.0.1",
     "pinia": "^2.1.7",
