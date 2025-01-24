@@ -12,3 +12,6 @@ npm install vue-i18n@next
 
 ### ide使用插件
 ![alt text](image.png)
+
+### 访问地址
+https://wangwenqin99.github.io/love/
